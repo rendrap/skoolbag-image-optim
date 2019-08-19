@@ -30,7 +30,7 @@ img-compression : 80
     <div class="large-12 columns">
         <div class="twentytwenty-container">
             <img src="{{ image.path | relative_url }}" class="width-100" />
-            <img src="dist/uploads-lossy-80/{{ image.name }} " class="width-100" />
+            <img src="{{ image.name | prepend : 'dist/uploads-lossy-80/' | relative_url }}" class="width-100" />
         </div>
     </div>
 </div>

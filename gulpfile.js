@@ -6,7 +6,7 @@ const size = require('gulp-size');
 const mozjpeg = require('imagemin-mozjpeg')
 const pngquant = require('imagemin-pngquant');
 const zopfli = require('imagemin-zopfli');
-const ghPages = require('gulp-gh-pages');
+const deploy = require('gulp-gh-pages');
 
 gulp.task('lossy-images-80', () => {
   gulp.src('images/**/*')
@@ -105,6 +105,10 @@ gulp.task('clear', () =>
     cache.clearAll()
 );
 
+gulp.task('deploy', function () {
+  return gulp.src("./_site/**/*")
+    .pipe(deploy())
+});
 
 gulp.task('lossless', ['lossless-images','lossless-uploads']);
 gulp.task('lossy-80', ['lossy-images-80','lossy-uploads-80']);
