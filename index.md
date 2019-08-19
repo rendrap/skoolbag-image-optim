@@ -35,3 +35,6 @@ Skoolbag-repository
 ### How this site is laid out
 Please find the link in navigation bar, each link contains reduction log and visual comparation between original images vs compresed images.
 To get back to this page, please find the home link in the navbar.
+
+### Summary
+

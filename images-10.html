@@ -1,0 +1,42 @@
+---
+layout : page
+img-compression : 10
+---
+
+<div class="row" style="margin-top: 2em; margin-bottom: 2em;">
+  <div class="column">
+    <h3>Images compression : quality {{ page.img-compression }}% </h3>
+    {% capture string_with_newlines %}
+    {% include_relative images-{{ page.img-compression }}.md %}
+    {% endcapture %}
+
+    {{ string_with_newlines | newline_to_br }}
+   </div>
+ </div>
+
+{% assign sorted_static_files = site.static_files | sort_natural: 'name' %}
+{% for image in sorted_static_files %}
+ {% if image.path contains 'images' %}
+   {% unless image.path contains 'dist' or image.extname contains 'pdf' or image.extname contains 'md' %}
+
+<div class="row" style="margin-top: 2em; margin-bottom: 2em;">
+    <div class="column text-center">
+        <p>Original file : {{ image.path }} vs compressed : dist/images-lossy-10/{{ image.name }}</p>
+        <p>
+          {{ image.path | prepend: '.' | file_size | string_of_size}} to
+          {{ image.name | prepend: './dist/images-lossy-10/' | file_size | string_of_size}}
+        </p>
+    </div>
+    <div class="large-12 columns">
+        <div class="twentytwenty-container">
+            <img src="{{ image.path | relative_url }}" class="width-100" />
+            <img src="{{ image.name | prepend : 'dist/images-lossy-10/' | relative_url }}" class="width-100" />
+        </div>
+    </div>
+</div>
+
+    {% endunless %}
+  {% endif %}
+{% endfor %}
+
+
