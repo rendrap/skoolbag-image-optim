@@ -23,6 +23,54 @@ gulp.task('lossy-images-80', () => {
     .pipe(size({ title: 'images size' }));
 });
 
+gulp.task('lossy-images-50', () => {
+  gulp.src('images/**/*')
+    .pipe(newer('dist/images-lossy-50/'))
+    .pipe(imagemin([
+      imagemin.gifsicle({interlaced: true,optimizationLevel:3}),
+      pngquant({speed: 1, quality: [0.5, 0.5],verbose: true}),
+      zopfli({more: true}),
+      mozjpeg({quality: 50})
+    ],
+    { verbose: true }
+    ))
+    .pipe(gulp.dest('dist/images-lossy-50/'))
+    .pipe(size({ title: 'images size' }));
+});
+
+gulp.task('lossy-images-10', () => {
+  gulp.src('images/**/*')
+    .pipe(newer('dist/images-lossy-10/'))
+    .pipe(imagemin([
+      imagemin.gifsicle({interlaced: true,optimizationLevel:3}),
+      pngquant({speed: 1, quality: [0.1, 0.1],verbose: true}),
+      zopfli({more: true}),
+      mozjpeg({quality: 10})
+    ],
+    { verbose: true }
+    ))
+    .pipe(gulp.dest('dist/images-lossy-10/'))
+    .pipe(size({ title: 'images size' }));
+});
+
+gulp.task('lossless-images', function(){
+  return gulp.src('images/**/*')
+    .pipe(newer('dist/images-lossless/'))
+    .pipe(imagemin(
+        [
+          imagemin.gifsicle({ interlaced: true }),
+          imagemin.jpegtran({ progressive: true }),
+          imagemin.optipng(),
+          imagemin.svgo({ plugins: [{ cleanupIDs: false }] })
+        ],
+        { verbose: true }
+      ))
+    .pipe(gulp.dest('dist/images-lossless/'))
+    .pipe(size({ title: "images size" }));
+});
+
+
+
 gulp.task('lossy-uploads-80', () => {
   gulp.src('uploads/**/*')
     .pipe(newer('dist/uploads-lossy-80/'))
@@ -66,23 +114,6 @@ gulp.task('lossy-uploads-10', () => {
     ))
     .pipe(gulp.dest('dist/uploads-lossy-10/'))
     .pipe(size({ title: 'images size' }));
-});
-
-
-gulp.task('lossless-uploads', function(){
-  return gulp.src('images/**/*')
-    .pipe(newer('dist/images-lossless/'))
-    .pipe(imagemin(
-        [
-          imagemin.gifsicle({ interlaced: true }),
-          imagemin.jpegtran({ progressive: true }),
-          imagemin.optipng(),
-          imagemin.svgo({ plugins: [{ cleanupIDs: false }] })
-        ],
-        { verbose: true }
-      ))
-    .pipe(gulp.dest('dist/images-lossless/'))
-    .pipe(size({ title: "images size" }));
 });
 
 gulp.task('lossless-uploads', function(){
