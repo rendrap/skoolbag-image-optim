@@ -18,183 +18,76 @@
 </head>
 
 <body>
+<div class="top-bar">
+    <div class="top-bar-left">
+        <ul class="menu">
+            <li><a href="/skoolbag-image-optim/">Home</a></li>
+            <li><a href="/skoolbag-image-optim/uploads-lossless">Uploads-loseless</a></li>
+            <li><a href="/skoolbag-image-optim/uploads-80">Uploads-80%</a></li>
+            <li><a href="/skoolbag-image-optim/uploads-50">Uploads-50%</a></li>
+            <li><a href="/skoolbag-image-optim/uploads-10">Uploads-10%</a></li>
+        </ul>
+    </div>
+</div>
 
-  <div class="row" style="margin-top: 2em; margin-bottom: 2em;">
+<div class="row">
   <div class="column">
-    <h3>Images compression : quality 80% </h3>
-    
 
-    <br />
-    [[90m14:09:35[39m] Using gulpfile C:\Delete_me\skoolbag-image-optim\gulpfile.js<br />
-[[90m14:09:35[39m] Starting 'lossy-uploads-80'...<br />
-[[90m14:09:35[39m] Finished 'lossy-uploads-80' after 34 ms<br />
-[[90m14:09:36[39m] gulp-imagemin: ✔ ezgif-4-d31c5941dfbe.gif (already optimized)<br />
-[[90m14:09:40[39m] gulp-imagemin: ✔ ezgif-1-80b2752ad118.gif (already optimized)<br />
-[[90m14:09:41[39m] gulp-imagemin: ✔ IMG_0004.jpg (saved 1.34 MB - 77.8%)<br />
-[[90m14:09:42[39m] gulp-imagemin: ✔ IMG_0010.jpg (saved 1.24 MB - 77%)<br />
-[[90m14:09:42[39m] gulp-imagemin: ✔ Mount View Primary.gif (saved 88.7 kB - 1.9%)<br />
-[[90m14:09:43[39m] gulp-imagemin: ✔ Nuwangi.jpg (saved 1.39 MB - 76.6%)<br />
-[[90m14:09:43[39m] gulp-imagemin: ✔ flash_sale.jpeg (saved 750 kB - 38%)<br />
-[[90m14:09:44[39m] gulp-imagemin: ✔ Pratheepa.jpg (saved 1.4 MB - 77.2%)<br />
-[[90m14:09:45[39m] gulp-imagemin: ✔ smartmockups_jnpk8pic.gif (saved 608 kB - 13.5%)<br />
-[[90m14:09:45[39m] gulp-imagemin: ✔ Thilini.JPG (saved 1.19 MB - 72.3%)<br />
-[[90m14:10:19[39m] gulp-imagemin: ✔ post-from-app_art2.png (saved 1.71 MB - 74.6%)<br />
-[[90m14:10:19[39m] gulp-imagemin: Minified 9 images (saved 9.71 MB - 44%)<br />
-[[90m14:10:19[39m] images size all files 16.6 MB<br />
-<br />
-    
-   </div>
- </div>
+  <p><br /></p>
+<h3 id="readme">ReadMe</h3>
+
+<p>There are two main directory where the repo keeps it’s images files : <code class="highlighter-rouge">/images</code> and <code class="highlighter-rouge">/uploads</code>.
+Here, we use gulp-imagemin to compress the images files, in various quality :</p>
+
+<ol>
+  <li>
+    <p>Loseless.  In lossless compression, no data is lost. Lossy compression reduces file size, but at the expense of possibly reducing image quality.</p>
+  </li>
+  <li>
+    <p>Lossy 80%, 50%, and 10% to exagerate the compression level, so that we can clearly see the difference.
+For most people, lossy plugins are the best choice. They offer significantly greater filesize savings, and you can customize the compression levels to meet your needs.</p>
+  </li>
+</ol>
+
+<p>for images in <code class="highlighter-rouge">uploads</code> directory, will be compressed to  <code class="highlighter-rouge">dist/uploads-loseless</code>,<code class="highlighter-rouge">dist/uploads-80</code>,<code class="highlighter-rouge">dist/uploads-50</code>, and <code class="highlighter-rouge">dist/uploads-10</code> respectively.
+The same goes to <code class="highlighter-rouge">images</code> directory, the content will be compressed to  <code class="highlighter-rouge">dist/images-loseless</code>,<code class="highlighter-rouge">dist/images-80</code>,<code class="highlighter-rouge">dist/images-50</code>, and <code class="highlighter-rouge">dist/images-10</code>.</p>
+
+<p>The details setting can be found in <code class="highlighter-rouge">gulpfile.js</code></p>
+
+<h3 id="skoolbag-repository-simplified-folder-structure">Skoolbag Repository Simplified Folder Structure</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Skoolbag-repository
+├─ images
+├─ uploads
+└─ dist                       Additional directory added for this compression project. All Compressed images goes inside this directory.
+   ├─ uploads-loseless        * Compresed image without losing data.
+   ├─ uploads-80              * Concatenated JavaScript files. Includes minified and unminified files.
+   └─ uploads-50              * Standalone JavaScript plugins.
+   └─ uploads-10              * Standalone JavaScript plugins.
+
+</code></pre></div></div>
+
+<h3 id="how-this-site-is-laid-out">How this site is laid out</h3>
+<p>Please find the link in navigation bar, each link contains reduction log and visual comparation between original images vs compresed images.
+To get back to this page, please find the home link in the navbar.</p>
+
+<h3 id="summary">Summary</h3>
 
 
 
- 
-
- 
-   
-  
-
- 
-   
-  
-
- 
-   
-
-<div class="row" style="margin-top: 2em; margin-bottom: 2em;">
-    <div class="column text-center">
-        <p>Original file : /uploads/flash_sale.jpeg vs compressed : dist/uploads-lossy-80/flash_sale.jpeg</p>
-        <p>
-          1.9M to
-          1.2M
-        </p>
-    </div>
-    <div class="large-12 columns">
-        <div class="twentytwenty-container">
-            <img src="/skoolbag-image-optim/uploads/flash_sale.jpeg" class="width-100" />
-            <img src="/skoolbag-image-optim/dist/uploads-lossy-80/flash_sale.jpeg" class="width-100" />
-        </div>
-    </div>
+  </div>
 </div>
 
-    
-  
-
- 
-   
-  
-
- 
-
- 
-
- 
-
- 
-   
-  
-
- 
-   
-  
-
- 
-
- 
-
- 
-
- 
-   
-  
-
- 
-   
-
-<div class="row" style="margin-top: 2em; margin-bottom: 2em;">
-    <div class="column text-center">
-        <p>Original file : /uploads/Nuwangi.jpg vs compressed : dist/uploads-lossy-80/Nuwangi.jpg</p>
-        <p>
-          1.7M to
-          416.1K
-        </p>
-    </div>
-    <div class="large-12 columns">
-        <div class="twentytwenty-container">
-            <img src="/skoolbag-image-optim/uploads/Nuwangi.jpg" class="width-100" />
-            <img src="/skoolbag-image-optim/dist/uploads-lossy-80/Nuwangi.jpg" class="width-100" />
-        </div>
-    </div>
-</div>
-
-    
-  
-
- 
-   
-  
-
- 
-
- 
-
- 
-
- 
-   
-
-<div class="row" style="margin-top: 2em; margin-bottom: 2em;">
-    <div class="column text-center">
-        <p>Original file : /uploads/post-from-app_art2.png vs compressed : dist/uploads-lossy-80/post-from-app_art2.png</p>
-        <p>
-          2.2M to
-          568.9K
-        </p>
-    </div>
-    <div class="large-12 columns">
-        <div class="twentytwenty-container">
-            <img src="/skoolbag-image-optim/uploads/post-from-app_art2.png" class="width-100" />
-            <img src="/skoolbag-image-optim/dist/uploads-lossy-80/post-from-app_art2.png" class="width-100" />
-        </div>
-    </div>
-</div>
-
-    
-  
-
- 
-   
-  
-
- 
-   
-  
-
- 
-   
-  
-
- 
-   
-  
-
- 
-
- 
-
- 
-
- 
-   
-  
-
-
-
+      <a class="top-link hide" href="" id="js-top">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6"><path d="M12 6H0l6-6z"/></svg>
+        <span class="screen-reader-text">Back to top</span>
+      </a>
 
 
       <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
-      <script src="js/jquery.event.move.js"></script>
-      <script src="js/jquery.twentytwenty.js"></script>
+      <script src="/skoolbag-image-optim/js/jquery.event.move.js"></script>
+      <script src="/skoolbag-image-optim/js/jquery.twentytwenty.js"></script>
+      <script src="/skoolbag-image-optim/js/scrollToTop.js"></script>
       <script>
       $(function() {
           $(".twentytwenty-container[data-orientation!='vertical']").twentytwenty({

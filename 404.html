@@ -18,6 +18,20 @@
 </head>
 
 <body>
+<div class="top-bar">
+    <div class="top-bar-left">
+        <ul class="menu">
+            <li><a href="/skoolbag-image-optim/">Home</a></li>
+            <li><a href="/skoolbag-image-optim/uploads-lossless">Uploads-loseless</a></li>
+            <li><a href="/skoolbag-image-optim/uploads-80">Uploads-80%</a></li>
+            <li><a href="/skoolbag-image-optim/uploads-50">Uploads-50%</a></li>
+            <li><a href="/skoolbag-image-optim/uploads-10">Uploads-10%</a></li>
+        </ul>
+    </div>
+</div>
+
+<div class="row">
+  <div class="column">
 
   <style type="text/css" media="screen">
   .container {
@@ -41,9 +55,19 @@
 </div>
 
 
+  </div>
+</div>
+
+      <a class="top-link hide" href="" id="js-top">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6"><path d="M12 6H0l6-6z"/></svg>
+        <span class="screen-reader-text">Back to top</span>
+      </a>
+
+
       <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
-      <script src="js/jquery.event.move.js"></script>
-      <script src="js/jquery.twentytwenty.js"></script>
+      <script src="/skoolbag-image-optim/js/jquery.event.move.js"></script>
+      <script src="/skoolbag-image-optim/js/jquery.twentytwenty.js"></script>
+      <script src="/skoolbag-image-optim/js/scrollToTop.js"></script>
       <script>
       $(function() {
           $(".twentytwenty-container[data-orientation!='vertical']").twentytwenty({
