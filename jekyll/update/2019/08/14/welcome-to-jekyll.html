@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7 ]> <html class="ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]>    <html class="lt-ie9" lang="en"> <![endif]-->
+<!--[if IE 9 ]>    <html class="lt-ie10" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html lang="en">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>twentytwenty</title>
+    <link href="/skoolbag-image-optim/css/foundation.css" rel="stylesheet" type="text/css" />
+    <link href="/skoolbag-image-optim/css/twentytwenty.css" rel="stylesheet" type="text/css" />
+    <link href="/skoolbag-image-optim/css/custom.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
+  <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Welcome to Jekyll!</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2019-08-14T20:44:56+07:00" itemprop="datePublished">Aug 14, 2019
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>You’ll find this post in your <code class="highlighter-rouge">_posts</code> directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run <code class="highlighter-rouge">jekyll serve</code>, which launches a web server and auto-regenerates your site when a file is updated.</p>
+
+<p>To add new posts, simply add a file in the <code class="highlighter-rouge">_posts</code> directory that follows the convention <code class="highlighter-rouge">YYYY-MM-DD-name-of-post.ext</code> and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.</p>
+
+<p>Jekyll also offers powerful support for code snippets:</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">def</span> <span class="nf">print_hi</span><span class="p">(</span><span class="nb">name</span><span class="p">)</span>
+  <span class="nb">puts</span> <span class="s2">"Hi, </span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2">"</span>
+<span class="k">end</span>
+<span class="n">print_hi</span><span class="p">(</span><span class="s1">'Tom'</span><span class="p">)</span>
+<span class="c1">#=&gt; prints 'Hi, Tom' to STDOUT.</span></code></pre></figure>
+
+<p>Check out the <a href="https://jekyllrb.com/docs/home">Jekyll docs</a> for more info on how to get the most out of Jekyll. File all bugs/feature requests at <a href="https://github.com/jekyll/jekyll">Jekyll’s GitHub repo</a>. If you have questions, you can ask them on <a href="https://talk.jekyllrb.com/">Jekyll Talk</a>.</p>
+
+
+  </div><a class="u-url" href="/skoolbag-image-optim/jekyll/update/2019/08/14/welcome-to-jekyll.html" hidden></a>
+</article>
+
+
+      <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+      <script src="js/jquery.event.move.js"></script>
+      <script src="js/jquery.twentytwenty.js"></script>
+      <script>
+      $(function() {
+          $(".twentytwenty-container[data-orientation!='vertical']").twentytwenty({
+              default_offset_pct: 0.5,
+              move_slider_on_hover: false,
+              click_to_move: true,
+              before_label: 'Original', // Set a custom before label
+              after_label: 'Compressed',
+          });
+          $(".twentytwenty-container[data-orientation='vertical']").twentytwenty({
+              default_offset_pct: 0.3,
+              orientation: 'vertical',
+              move_slider_on_hover: false,
+              click_to_move: true
+          });
+      });
+      </script>
+  </body>
+</html>
+
