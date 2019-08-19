@@ -36,5 +36,14 @@ Skoolbag-repository
 Please find the link in navigation bar, each link contains reduction log and visual comparation between original images vs compresed images.
 To get back to this page, please find the home link in the navbar.
 
+Move the slider icon left or right to see the difference in image quality. Or click anywhere in image area to move the slider.
+Hover the curson on top of the image to see the overlay. Original image are on the left, compressed image is on the right side.<br>
+
+Note : image below is just a screenshot, therefore the slider can not be moved.
+{:.alert}
+
+![Image Comparison Slider]({{ "screenshot\slider.jpg" | relative_url }}){:.width-40}
+![Image Overlay]({{ "screenshot\overlay.jpg" | relative_url }}){:.width-50}
+
 ### Summary
 
