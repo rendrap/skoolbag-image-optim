@@ -6,6 +6,7 @@ const size = require('gulp-size');
 const mozjpeg = require('imagemin-mozjpeg')
 const pngquant = require('imagemin-pngquant');
 const zopfli = require('imagemin-zopfli');
+const ghPages = require('gulp-gh-pages');
 
 gulp.task('lossy-images-80', () => {
   gulp.src('images/**/*')
