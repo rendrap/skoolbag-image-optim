@@ -44,8 +44,10 @@
   <p><br /></p>
 <h3 id="readme">ReadMe</h3>
 
-<p>There are two main directory where the repo keeps it’s images files : <code class="highlighter-rouge">/images</code> and <code class="highlighter-rouge">/uploads</code>.
-Here, we use gulp-imagemin to compress the images files, in various quality :</p>
+<p>There are two main directory where the repo keeps it’s images files : <code class="highlighter-rouge">assets/images</code> and <code class="highlighter-rouge">/uploads</code>.
+We use all image in <code class="highlighter-rouge">assets/images</code>, but only include image 1MB and over to make the comparison page shorter.</p>
+
+<p>Here, we use gulp-imagemin to compress the images files, in various quality :</p>
 
 <ol>
   <li>
@@ -60,23 +62,28 @@ For most people, lossy plugins are the best choice. They offer significantly gre
 <p>for images in <code class="highlighter-rouge">uploads</code> directory, will be compressed to  <code class="highlighter-rouge">dist/uploads-loseless</code>,<code class="highlighter-rouge">dist/uploads-80</code>,<code class="highlighter-rouge">dist/uploads-50</code>, and <code class="highlighter-rouge">dist/uploads-10</code> respectively.
 The same goes to <code class="highlighter-rouge">images</code> directory, the content will be compressed to  <code class="highlighter-rouge">dist/images-loseless</code>,<code class="highlighter-rouge">dist/images-80</code>,<code class="highlighter-rouge">dist/images-50</code>, and <code class="highlighter-rouge">dist/images-10</code>.</p>
 
-<p>The details setting can be found in <code class="highlighter-rouge">gulpfile.js</code></p>
+<p>The details setting can be found in <a href="https://github.com/rendrap/skoolbag-image-optim/blob/master/gulpfile.js"><code class="highlighter-rouge">gulpfile.js</code></a></p>
 
 <h3 id="skoolbag-repository-simplified-folder-structure">Skoolbag Repository Simplified Folder Structure</h3>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Skoolbag-repository
-├─ images
+├─ assets
+│  └─ images
 ├─ uploads
-└─ dist                       Additional directory added for this compression project. All Compressed images goes inside this directory.
+└─ dist (Added for this project) * Additional directory added for this compression project. All Compressed images goes inside this directory.
    ├─ uploads-loseless        * Compresed image without losing data.
-   ├─ uploads-80              * Concatenated JavaScript files. Includes minified and unminified files.
-   └─ uploads-50              * Standalone JavaScript plugins.
-   └─ uploads-10              * Standalone JavaScript plugins.
+   ├─ uploads-80              * Image compression quality set to 80%.
+   ├─ uploads-50              * Image compression quality set to 50%.
+   └─ uploads-10              * Image compression quality set to 10%.
+   ├─ images-loseless         * Compresed image without losing data.
+   ├─ images-80               * Image compression quality set to 80%.
+   ├─ images-50               * Image compression quality set to 50%.
+   └─ images-10               * Image compression quality set to 10%.
 
 </code></pre></div></div>
 
 <h3 id="how-this-site-is-laid-out">How this site is laid out</h3>
-<p>Please find the link in navigation bar, each link contains reduction log and visual comparation between original images vs compresed images.
+<p>Please find the link in navigation bar, each link contains reduction log and visual comparison between original images vs compresed images.
 To get back to this page, please find the home link in the navbar.</p>
 
 <p>Move the slider icon left or right to see the difference in image quality. Or click anywhere in image area to move the slider.
@@ -90,6 +97,15 @@ The slider also work on mobile.<br /></p>
 
 <h3 id="summary">Summary</h3>
 
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>uploads-loseless    (saved 9.51 MB - 17.4%)
+uploads-80          (saved 34.5 MB - 25.6%)
+uploads-50          (saved 52.6 MB - 34.9%)
+uploads-10          (saved 57.2 MB - 37.9%)
+images-loseless     (Minified 0 images)
+images-80           (saved 683 kB - 66.5%)
+images-50           (saved 802 kB - 78.2%)
+images-10           (saved 902 kB - 87.9%)
+</code></pre></div></div>
 
 
   </div>
