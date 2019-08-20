@@ -5,7 +5,7 @@ layout : default
 ### ReadMe
 
 There are two main directory where the repo keeps it's images files : `assets/images` and `/uploads`.
-We use all image in `assets/images`, but only include image 1MB and over to make the comparison page shorter.
+We use all image in `assets/images`, but only include image 1MB and over in the `/uploads` to make the comparison page shorter.
 
 Here, we use gulp-imagemin to compress the images files, in various quality :
 
@@ -17,7 +17,7 @@ For most people, lossy plugins are the best choice. They offer significantly gre
 for images in `uploads` directory, will be compressed to  `dist/uploads-loseless`,`dist/uploads-80`,`dist/uploads-50`, and `dist/uploads-10` respectively.
 The same goes to `images` directory, the content will be compressed to  `dist/images-loseless`,`dist/images-80`,`dist/images-50`, and `dist/images-10`.
 
-The details setting can be found in `gulpfile.js`
+The details setting can be found in [`gulpfile.js`](https://github.com/rendrap/skoolbag-image-optim/blob/master/gulpfile.js)
 
 
 ### Skoolbag Repository Simplified Folder Structure
@@ -55,3 +55,13 @@ Note : image below is just a screenshot, therefore the slider can not be moved.
 
 ### Summary
 
+```
+uploads-loseless    (saved 9.51 MB - 17.4%)
+uploads-80          (saved 34.5 MB - 25.6%)
+uploads-50          (saved 52.6 MB - 34.9%)
+uploads-10          (saved 57.2 MB - 37.9%)
+images-loseless     (Minified 0 images)
+images-80           (saved 683 kB - 66.5%)
+images-50           (saved 802 kB - 78.2%)
+images-10           (saved 902 kB - 87.9%)
+```
