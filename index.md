@@ -37,7 +37,8 @@ Please find the link in navigation bar, each link contains reduction log and vis
 To get back to this page, please find the home link in the navbar.
 
 Move the slider icon left or right to see the difference in image quality. Or click anywhere in image area to move the slider.
-Hover the curson on top of the image to see the overlay. Original image are on the left, compressed image is on the right side.<br>
+Hover the curson on top of the image to see the overlay. Original image are on the left, compressed image is on the right side.
+The slider also work on mobile.<br>
 
 Note : image below is just a screenshot, therefore the slider can not be moved.
 {:.alert}
