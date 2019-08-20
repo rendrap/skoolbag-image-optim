@@ -4,7 +4,9 @@ layout : default
 <br>
 ### ReadMe
 
-There are two main directory where the repo keeps it's images files : `/images` and `/uploads`.
+There are two main directory where the repo keeps it's images files : `assets/images` and `/uploads`.
+We use all image in `assets/images`, but only include image 1MB and over to make the comparison page shorter.
+
 Here, we use gulp-imagemin to compress the images files, in various quality :
 
 1. Loseless.  In lossless compression, no data is lost. Lossy compression reduces file size, but at the expense of possibly reducing image quality.
@@ -22,18 +24,23 @@ The details setting can be found in `gulpfile.js`
 
 ```
 Skoolbag-repository
-├─ images
+├─ assets
+│  └─ images
 ├─ uploads
-└─ dist                       Additional directory added for this compression project. All Compressed images goes inside this directory.
+└─ dist (Added for this project) * Additional directory added for this compression project. All Compressed images goes inside this directory.
    ├─ uploads-loseless        * Compresed image without losing data.
-   ├─ uploads-80              * Concatenated JavaScript files. Includes minified and unminified files.
-   └─ uploads-50              * Standalone JavaScript plugins.
-   └─ uploads-10              * Standalone JavaScript plugins.
+   ├─ uploads-80              * Image compression quality set to 80%.
+   ├─ uploads-50              * Image compression quality set to 50%.
+   └─ uploads-10              * Image compression quality set to 10%.
+   ├─ images-loseless         * Compresed image without losing data.
+   ├─ images-80               * Image compression quality set to 80%.
+   ├─ images-50               * Image compression quality set to 50%.
+   └─ images-10               * Image compression quality set to 10%.
 
 ```
 
 ### How this site is laid out
-Please find the link in navigation bar, each link contains reduction log and visual comparation between original images vs compresed images.
+Please find the link in navigation bar, each link contains reduction log and visual comparison between original images vs compresed images.
 To get back to this page, please find the home link in the navbar.
 
 Move the slider icon left or right to see the difference in image quality. Or click anywhere in image area to move the slider.
